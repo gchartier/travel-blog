@@ -1,9 +1,12 @@
 <script>
 	import '@fontsource/comic-neue';
-	// import PostcardsList from '../components/PostcardsList.svelte';
+	import PostcardsList from '../components/PostcardsList.svelte';
 </script>
 
 <main class="spaceBackground">
+	<a href="mailto:gabriel@chartier.link"
+		><img src="/email.gif" class="emailMe" alt="A rotating e-mail gif" /></a
+	>
 	<header>
 		<img
 			src="/airstream-earth.gif"
@@ -58,11 +61,37 @@
 		src="/tropical-night.gif"
 		alt="A gif of An Orca emerging from the water in a tropical moonlit scenery with constellations overhead, palm trees and mountains to the sides, and shimmering moving water at the base. It's mostly blue and purple. The frame of the gif is blue and it has a texture and what looks like a pixelated glitter."
 	/>
+
+	<footer>
+		<img
+			src="/construction-spinner.gif"
+			class="constructionSpinner"
+			alt="A spinning construction sign"
+		/>
+		<img
+			src="/under-construction.gif"
+			class="constructionBanner"
+			alt="A flashing yellow and black banner that says 'Under Construction'"
+		/>
+		<img
+			src="/construction-spinner.gif"
+			class="constructionSpinner"
+			alt="A spinning construction sign"
+		/>
+	</footer>
 </main>
 
 <style>
 	main {
 		color: white;
+		position: relative;
+	}
+
+	.emailMe {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		width: 2rem;
 	}
 
 	.spaceBackground {
@@ -94,7 +123,7 @@
 	}
 
 	main header img {
-		width: 10rem;
+		width: 12rem;
 		padding: 2rem;
 	}
 
@@ -103,7 +132,8 @@
 	}
 
 	.gif-divider {
-		padding: 6rem 0;
+		width: 25rem;
+		padding: 6rem 0 2rem 0;
 	}
 
 	.interestsList {
@@ -130,5 +160,20 @@
 	.watchingImage {
 		width: 4.5rem;
 		border: peachpuff 8px inset;
+	}
+
+	footer {
+		display: flex;
+		align-items: center;
+		padding-bottom: 2rem;
+	}
+
+	.constructionSpinner {
+		width: 4rem;
+	}
+
+	.constructionBanner {
+		width: 400px;
+		height: 30px;
 	}
 </style>

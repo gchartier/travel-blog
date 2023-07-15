@@ -1,4 +1,4 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import { getPostcards } from '../routes/+page';
 	import Postcard from '../components/Postcard.svelte';
 	import type { Postcard as PostcardType } from '../types';
@@ -26,4 +26,4 @@
 		list-style: none;
 		padding: 0;
 	}
-</style> -->
+</style>
