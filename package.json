@@ -31,6 +31,7 @@
 	"dependencies": {
 		"@fontsource/comic-neue": "^4.5.10",
 		"@fontsource/libre-barcode-39": "^4.5.10",
-		"@fontsource/libre-barcode-39-text": "^4.5.10"
+		"@fontsource/libre-barcode-39-text": "^4.5.10",
+		"pocketbase": "^0.15.0"
 	}
 }

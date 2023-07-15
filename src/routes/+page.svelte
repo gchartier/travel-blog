@@ -1,63 +1,134 @@
 <script>
 	import '@fontsource/comic-neue';
-	import PostcardsList from '../components/PostcardsList.svelte';
+	// import PostcardsList from '../components/PostcardsList.svelte';
 </script>
 
-<main>
-	<span class="spaceBackground">
-		<div>
-			<img
-				src="/airstream-earth.gif"
-				alt="A spinning globe with an airstream trailer in the middle of it."
-			/>
-			<h1 class="pageTitle">Gabriel's Travel Blog</h1>
-			<img
-				src="/airstream-earth.gif"
-				alt="A spinning globe with an airstream trailer in the middle of it."
-			/>
-		</div>
-	</span>
+<main class="spaceBackground">
+	<header>
+		<img
+			src="/airstream-earth.gif"
+			alt="A spinning globe with an airstream trailer in the middle of it."
+		/>
+		<h1 class="pageTitle">Gabriel's Travel Blog</h1>
+		<img
+			src="/airstream-earth.gif"
+			alt="A spinning globe with an airstream trailer in the middle of it."
+		/>
+	</header>
 
-	<PostcardsList />
+	<section class="interestsList">
+		<div class="interest">
+			<img
+				src="/winkeye.gif"
+				class="watchingImage"
+				alt="A pencil-drawn eye with short lashes blinking with a white background"
+			/>
+			<h2 class="subHeading">Watching ⤵</h2>
+			<ul>
+				<li>
+					<a href="https://youtu.be/3QtklTXbKUQ?t=553" target="_blank"
+						>Imogen Heap Tiny Desk Concert</a
+					>
+				</li>
+			</ul>
+		</div>
+
+		<div class="interest">
+			<img src="/GBook.gif" alt="A purple-bound book with pages flipping one after the other" />
+			<h2 class="subHeading">Reading ⤵</h2>
+			<ul>
+				<li>
+					<p style="margin: 0;">
+						<a href="https://www.gutenberg.org/files/16269/16269-8.txt" target="_blank"
+							>Thought Forms: A Record of Clairvoyant Investigation</a
+						>
+					</p>
+				</li>
+				<li>
+					<a href="https://www.goodreads.com/book/show/50492566-ux-magic" target="_blank"
+						>UX Magic</a
+					>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<img
+		class="gif-divider"
+		src="/tropical-night.gif"
+		alt="A gif of An Orca emerging from the water in a tropical moonlit scenery with constellations overhead, palm trees and mountains to the sides, and shimmering moving water at the base. It's mostly blue and purple. The frame of the gif is blue and it has a texture and what looks like a pixelated glitter."
+	/>
 </main>
 
 <style>
 	main {
+		color: white;
+	}
+
+	.spaceBackground {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+
 		width: 100%;
+		height: 100%;
+		margin: 0;
+
 		font-family: 'Comic Neue', cursive;
 		background-color: #e5e9bf;
-	}
-
-	.spaceBackground {
-		margin: 10px;
 		background-image: url('/spacemov.gif');
-		height: 100%;
 		border: 8px solid gold;
-		border-style: inset;
+		border-style: ridge;
 	}
 
 	.pageTitle {
-		color: white;
 		font-size: 2.2rem;
 	}
 
-	main div {
+	main header {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
 	}
 
-	main div img {
-		width: 120px;
-		padding: 20px;
+	main header img {
+		width: 10rem;
+		padding: 2rem;
 	}
 
-	main div h1 {
+	main h1 {
 		padding: 0 20px;
+	}
+
+	.gif-divider {
+		padding: 6rem 0;
+	}
+
+	.interestsList {
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
+	}
+
+	.interest {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.interest h2 {
+		margin-bottom: 0;
+		padding-left: 1rem;
+	}
+
+	.interest img {
+		width: 3rem;
+	}
+
+	.watchingImage {
+		width: 4.5rem;
+		border: peachpuff 8px inset;
 	}
 </style>
