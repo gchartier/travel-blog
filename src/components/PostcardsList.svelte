@@ -1,24 +1,15 @@
-<!-- <script lang="ts">
-	import { getPostcards } from '../routes/+page';
-	import Postcard from '../components/Postcard.svelte';
-	import type { Postcard as PostcardType } from '../types';
-	import { useQuery } from '@sveltestack/svelte-query';
+<script lang="ts">
+	import Postcard from './Postcard.svelte';
+	import type { Postcard as PostcardType } from '$lib/types';
 
-	// const queryResult = useQuery<PostcardType[]>('postcards', getPostcards);
-	export let data;
+	export let postcards: PostcardType[];
 </script>
 
 <h2>Where am I now?</h2>
 <ol>
-	{#await getPostcards}
-		<p>...waiting</p>
-	{:then postcards}
-		{#each data as postcard, i}
-			<Postcard />
-		{/each}
-	{:catch error}
-		<p style="color: red">{error.message}</p>
-	{/await}
+	{#each postcards as postcard, i (postcard.id)}
+		<Postcard {postcard} />
+	{/each}
 </ol>
 
 <style>
@@ -26,4 +17,4 @@
 		list-style: none;
 		padding: 0;
 	}
-</style> -->
+</style>

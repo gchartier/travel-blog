@@ -32,6 +32,8 @@
 		"@fontsource/comic-neue": "^4.5.10",
 		"@fontsource/libre-barcode-39": "^4.5.10",
 		"@fontsource/libre-barcode-39-text": "^4.5.10",
-		"pocketbase": "^0.15.0"
+		"dotenv": "^16.3.1",
+		"pocketbase": "^0.15.0",
+		"vitest": "^0.34.3"
 	}
 }

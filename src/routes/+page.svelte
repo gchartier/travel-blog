@@ -1,6 +1,8 @@
 <script>
 	import '@fontsource/comic-neue';
 	import PostcardsList from '../components/PostcardsList.svelte';
+
+	export let data;
 </script>
 
 <main class="spaceBackground">
@@ -33,6 +35,11 @@
 						>Imogen Heap Tiny Desk Concert</a
 					>
 				</li>
+				<li>
+					<a href="https://youtu.be/FL3UL90cG-k?t=2076" target="_blank"
+						>Archives, Technology, and Innovation by Peter Van Garderen</a
+					>
+				</li>
 			</ul>
 		</div>
 
@@ -48,8 +55,9 @@
 					</p>
 				</li>
 				<li>
-					<a href="https://www.goodreads.com/book/show/50492566-ux-magic" target="_blank"
-						>UX Magic</a
+					<a
+						href="https://medium.com/the-interaction-design-foundation/the-magic-of-semantic-interaction-design-1864ccafdc51"
+						target="_blank">UX Magic</a
 					>
 				</li>
 			</ul>
@@ -61,6 +69,10 @@
 		src="/tropical-night.gif"
 		alt="A gif of An Orca emerging from the water in a tropical moonlit scenery with constellations overhead, palm trees and mountains to the sides, and shimmering moving water at the base. It's mostly blue and purple. The frame of the gif is blue and it has a texture and what looks like a pixelated glitter."
 	/>
+
+	<section>
+		<PostcardsList postcards={data.postcards} />
+	</section>
 
 	<footer>
 		<img

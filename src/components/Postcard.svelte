@@ -1,30 +1,37 @@
-<script>
+<script lang="ts">
 	import '@fontsource/libre-barcode-39-text';
+	import type { Postcard } from '$lib/types';
+	import { PUBLIC_POCKETBASE_FILE_URL } from '$env/static/public';
+
+	export let postcard: Postcard;
+	$: postcardImage = `${PUBLIC_POCKETBASE_FILE_URL}${postcard.collectionId}/${postcard.id}/${postcard.picture}`;
+	$: postcardStamp = `${PUBLIC_POCKETBASE_FILE_URL}${postcard.collectionId}/${postcard.id}/${postcard.stamp}`;
 </script>
 
 <li class="postcard">
 	<div class="postcard-inner">
 		<div class="postcard-back">
 			<header>
-				<div class="postdate">05-20-2023</div>
+				<div class="postdate">{postcard.date}</div>
 				<div class="stamp">
-					<footer>2¢</footer>
+					<img src={postcardStamp} alt={postcard.stampAltText} />
+					<span>2¢</span>
 				</div>
 			</header>
 			<div class="content">
 				<p class="message">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, nam. Earum aut
-					assumenda laborum sequi qui corporis exercitationem explicabo est. Facilis nulla quisquam
-					in dicta, beatae voluptatibus sint voluptas delectus.
+					{postcard.note}
 				</p>
 				<div class="divider" />
 				<p class="postaddress">
-					<span class="location">Bryce Canyon National Park</span>
-					<span class="state">Utah, USA</span>
+					<span class="location">{postcard.place}</span>
+					<span class="state">{postcard.location}</span>
 				</p>
 			</div>
 		</div>
-		<div class="postcard-front" />
+		<div class="postcard-front">
+			<img style="width: 100%; height: 100%;" src={postcardImage} alt={postcard.pictureAltText} />
+		</div>
 	</div>
 </li>
 
@@ -62,7 +69,6 @@
 	.postcard-front {
 		background-color: #fffaf0;
 		color: black;
-		background-image: url('/postcard-images/bryce-canyon.jpg');
 		background-size: 520px;
 	}
 
@@ -121,19 +127,18 @@
 
 	.stamp {
 		display: flex;
+		position: relative;
 		width: 55px;
 		height: 55px;
 		border: 3px dashed black;
 		color: white;
-		background-image: url('/postcard-stamps/psychedeliac.png');
 		background-size: 55px;
 	}
 
-	.stamp footer {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-		align-items: flex-end;
+	.stamp span {
+		position: absolute;
+		bottom: 0;
+		left: 0;
 		font-size: 0.7rem;
 		margin: 0;
 		font-weight: bold;
