@@ -20,7 +20,7 @@
 			</header>
 			<div class="content">
 				<p class="message">
-					{postcard.note}
+					{@html postcard.note}
 				</p>
 				<div class="divider" />
 				<p class="postaddress">
@@ -109,6 +109,7 @@
 
 	.postcard-back .message {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		width: 65%;

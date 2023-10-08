@@ -1,26 +1,8 @@
 <script>
 	import '@fontsource/comic-neue';
-	import PostcardsList from '../components/PostcardsList.svelte';
-
-	export let data;
 </script>
 
-<main class="spaceBackground">
-	<a href="mailto:gabriel@chartier.link"
-		><img src="/email.gif" class="emailMe" alt="A rotating e-mail gif" /></a
-	>
-	<header>
-		<img
-			src="/airstream-earth.gif"
-			alt="A spinning globe with an airstream trailer in the middle of it."
-		/>
-		<h1 class="pageTitle">Gabriel's Travel Blog</h1>
-		<img
-			src="/airstream-earth.gif"
-			alt="A spinning globe with an airstream trailer in the middle of it."
-		/>
-	</header>
-
+<main>
 	<section class="interestsList">
 		<div class="interest">
 			<img
@@ -70,10 +52,6 @@
 		alt="A gif of An Orca emerging from the water in a tropical moonlit scenery with constellations overhead, palm trees and mountains to the sides, and shimmering moving water at the base. It's mostly blue and purple. The frame of the gif is blue and it has a texture and what looks like a pixelated glitter."
 	/>
 
-	<section>
-		<PostcardsList postcards={data.postcards} />
-	</section>
-
 	<footer>
 		<img
 			src="/construction-spinner.gif"
@@ -97,50 +75,6 @@
 	main {
 		color: white;
 		position: relative;
-	}
-
-	.emailMe {
-		position: absolute;
-		top: 15px;
-		right: 15px;
-		width: 2rem;
-	}
-
-	.spaceBackground {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-
-		width: 100%;
-		height: 100%;
-		margin: 0;
-
-		font-family: 'Comic Neue', cursive;
-		background-color: #e5e9bf;
-		background-image: url('/spacemov.gif');
-		border: 8px solid gold;
-		border-style: ridge;
-	}
-
-	.pageTitle {
-		font-size: 2.2rem;
-	}
-
-	main header {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-	}
-
-	main header img {
-		width: 12rem;
-		padding: 2rem;
-	}
-
-	main h1 {
-		padding: 0 20px;
 	}
 
 	.gif-divider {

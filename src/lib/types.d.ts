@@ -16,3 +16,11 @@ export interface Postcard extends PocketbaseCollection {
 	stamp: string;
 	stampAltText: string;
 }
+
+export interface Microlog extends PocketbaseCollection {
+	id: string;
+	created: string;
+	updated: string;
+	title: string;
+	text: string;
+}
